@@ -47,7 +47,7 @@
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
     }
 
     body {
@@ -55,47 +55,6 @@
       background: var(--c0);
       color: var(--c6);
       overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* ─────────────────────────────────────────
-   CURSOR SYSTEM
-───────────────────────────────────────── */
-    #cur {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: var(--c5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: width .15s, height .15s, background .2s, opacity .2s;
-      mix-blend-mode: multiply;
-    }
-
-    #cur-r {
-      position: fixed;
-      width: 36px;
-      height: 36px;
-      border: 1.5px solid var(--c4);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width .2s, height .2s, border-color .2s;
-    }
-
-    .cur-big #cur {
-      width: 18px;
-      height: 18px;
-      background: var(--c5)
-    }
-
-    .cur-big #cur-r {
-      width: 56px;
-      height: 56px;
-      border-color: var(--c5)
     }
 
     /* ─────────────────────────────────────────
@@ -299,7 +258,6 @@
       border: none;
       background: var(--c6);
       color: white;
-      cursor: none;
       position: relative;
       overflow: hidden;
       transition: transform .3s, box-shadow .3s;
@@ -750,7 +708,6 @@
       font-weight: 700;
       letter-spacing: .04em;
       text-decoration: none;
-      cursor: none;
       position: relative;
       overflow: hidden;
       transition: transform .3s cubic-bezier(.23, 1, .32, 1), box-shadow .3s;
@@ -1260,7 +1217,6 @@
       color: var(--c6);
       backdrop-filter: blur(8px);
       transition: all .25s cubic-bezier(.23, 1, .32, 1);
-      cursor: none;
     }
 
     .tech-chip:hover {
@@ -1273,6 +1229,77 @@
 
     .chip-ico {
       font-size: 1rem
+    }
+
+    /* ─────────────────────────────────────────
+   STICKERS
+───────────────────────────────────────── */
+    .peel-sticker {
+      position: absolute;
+      z-index: 5;
+      filter: drop-shadow(4px 10px 15px rgba(232, 24, 109, 0.2));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: grab;
+      user-select: none;
+    }
+    .peel-sticker:active {
+      cursor: grabbing;
+      transform: scale(0.9) !important;
+    }
+    .st-duck {
+      top: -120px;
+      right: -150px;
+      transform: rotate(18deg);
+      width: 140px;
+    }
+    
+    .st-flutter {
+      bottom: -110px;
+      left: -160px;
+      transform: rotate(-12deg);
+      width: 135px;
+    }
+
+    .st-kotlin {
+      top: -100px;
+      left: -140px;
+      transform: rotate(-22deg);
+      width: 130px;
+    }
+
+    .st-aws {
+      bottom: -100px;
+      right: -130px;
+      transform: rotate(14deg);
+      width: 135px;
+    }
+
+    .st-docker {
+      top: -140px;
+      left: 65%;
+      transform: rotate(6deg);
+      width: 130px;
+    }
+    .st-android {
+      top: 40%;
+      right: -160px;
+      transform: rotate(-15deg);
+      width: 140px;
+    }
+    .st-github {
+      top: 50%;
+      left: -150px;
+      transform: rotate(20deg);
+      width: 130px;
+    }
+
+    @media (max-width: 900px) {
+      .peel-sticker { width: 65px !important; }
+      .st-duck { right: 0; top: -30px; }
+      .st-flutter { left: 0; bottom: 0; }
+      .st-kotlin { left: 0; top: -20px; }
+      .st-aws { right: 0; bottom: 20px; }
+      .st-docker { display: none; }
     }
 
     /* ─────────────────────────────────────────
@@ -1701,6 +1728,13 @@
       z-index: 1;
     }
 
+    .sk-ic svg {
+      width: 24px;
+      height: 24px;
+      color: var(--c5);
+      stroke-width: 2.2;
+    }
+
     .sk-card h3 {
       font-family: var(--font-display);
       font-size: 1.3rem;
@@ -2035,7 +2069,6 @@
       text-decoration: none;
       border: 1.5px solid var(--c1);
       transition: all 0.3s;
-      cursor: none;
     }
 
     .mc-soc:hover {
@@ -2108,7 +2141,6 @@
       padding: 18px 32px;
       text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      cursor: none;
       margin-top: 24px;
       box-shadow: 0 8px 20px rgba(42, 16, 32, 0.2);
     }
@@ -2501,7 +2533,6 @@
       color: var(--c6);
       text-decoration: none;
       transition: transform 0.3s, color 0.3s;
-      cursor: none;
     }
 
     .f-soc:hover {
@@ -2520,7 +2551,6 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       border-radius: 100px;
-      cursor: none;
       transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
       box-shadow: 0 10px 24px rgba(232, 24, 109, 0.2);
     }
@@ -2687,7 +2717,6 @@
       color: var(--c6) !important;
       text-decoration: underline !important;
       font-weight: 500 !important;
-      cursor: none !important;
     }
 
     .cw-text:hover {
@@ -2713,7 +2742,6 @@
       font-family: var(--font-body) !important;
       font-weight: bold !important;
       transition: background 0.3s, transform 0.3s !important;
-      cursor: none !important;
     }
 
     .cw-social-icons a:hover {
@@ -2793,7 +2821,6 @@
       font-family: var(--font-body) !important;
       font-weight: 600 !important;
       border: none !important;
-      cursor: none !important;
       transition: background 0.3s, transform 0.3s !important;
       border-radius: 2px !important;
       box-shadow: none !important;
@@ -2831,8 +2858,7 @@
   </div>
 
   <!-- CURSOR -->
-  <div id="cur"></div>
-  <div id="cur-r"></div>
+
 
   <!-- ══════════════════════════════════════
      NAV
@@ -2922,7 +2948,14 @@
 ══════════════════════════════════════ -->
       <section class="about" id="about">
         <div class="container">
-          <div class="about-grid">
+          <div class="about-grid" style="position: relative;">
+            <img src="duck.png" alt="Duck Sticker" class="peel-sticker st-duck">
+            <img src="flutter.png" alt="Flutter Sticker" class="peel-sticker st-flutter">
+            <img src="kotlin.png" alt="Kotlin Sticker" class="peel-sticker st-kotlin">
+            <img src="aws.png" alt="AWS Sticker" class="peel-sticker st-aws">
+            <img src="docker.png" alt="Docker Sticker" class="peel-sticker st-docker">
+            <img src="Android.png" alt="Android Sticker" class="peel-sticker st-android">
+            <img src="github.png" alt="GitHub Sticker" class="peel-sticker st-github">
             <div class="about-vis rv">
               <div class="ab-img" style="background: url('Piyushi.png') no-repeat center center / cover;"></div>
             </div>
@@ -3001,7 +3034,7 @@
           </div>
           <div class="sk-grid">
             <div class="sk-card rv">
-              <div class="sk-ic">💻</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
               <h3>Languages & Arch</h3>
               <p>Building robust apps with modern Android languages and scalable architecture patterns.</p>
               <div class="sk-bars">
@@ -3026,7 +3059,7 @@
               </div>
             </div>
             <div class="sk-card rv d1">
-              <div class="sk-ic">⚙️</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
               <h3>Frameworks</h3>
               <p>Leveraging powerful Android SDKs and libraries to build efficient, maintainable applications.</p>
               <div class="sk-bars">
@@ -3051,7 +3084,7 @@
               </div>
             </div>
             <div class="sk-card rv d2">
-              <div class="sk-ic">📱</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
               <h3>UI / UX</h3>
               <p>Crafting intuitive and accessible user interfaces relying on modern layout systems.</p>
               <div class="sk-bars">
@@ -3076,7 +3109,7 @@
               </div>
             </div>
             <div class="sk-card rv">
-              <div class="sk-ic">🗄️</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div>
               <h3>Data & APIs</h3>
               <p>Seamlessly managing local persistence and cloud data integrations over REST APIs.</p>
               <div class="sk-bars">
@@ -3101,7 +3134,7 @@
               </div>
             </div>
             <div class="sk-card rv d1">
-              <div class="sk-ic">🛠️</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
               <h3>Tools & DevOps</h3>
               <p>Streamlined development ecosystems, from code orchestration to continuous delivery.</p>
               <div class="sk-bars">
@@ -3126,7 +3159,7 @@
               </div>
             </div>
             <div class="sk-card rv d2">
-              <div class="sk-ic">🔥</div>
+              <div class="sk-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg></div>
               <h3>Services & Quality</h3>
               <p>Ensuring robust performance through meticulous testing and scalable cloud services.</p>
               <div class="sk-bars">
@@ -3172,7 +3205,7 @@
         <div class="cw-contact-info">
           <div class="cw-info-row">
             <span class="cw-icon">✉</span>
-            <a href="mailto:piyushisinghsncp@gmail.com" class="cw-text">piyushisingh@example.com</a>
+            <a href="mailto:Piyushiofficalsingh@gmail.com" class="cw-text">Piyushiofficalsingh@gmail.com</a>
           </div>
           <div class="cw-info-row">
             <div class="cw-social-icons">
@@ -3270,29 +3303,110 @@
     });
 
     /* ── CURSOR ── */
-    const cur = document.getElementById('cur');
-    const curR = document.getElementById('cur-r');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
 
-      // Eyes removed
-    });
 
     /* ── MAIL SUBMIT ── */
-    window.sendMail = function (e) {
+    window.sendMail = async function (e) {
       e.preventDefault();
-      const name = document.getElementById('f-name').value;
-      const email = document.getElementById('f-email').value;
-      const msg = document.getElementById('f-msg').value;
-      window.location.href = `mailto:piyushi@example.com?subject=Hello from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg)}%0A%0AReply to: ${encodeURIComponent(email)}`;
+      const fnameInput = document.getElementById('f-fname');
+      const lnameInput = document.getElementById('f-lname');
+      const emailInput = document.getElementById('f-email');
+      const msgInput = document.getElementById('f-msg');
+      
+      const name = (fnameInput ? fnameInput.value : '') + ' ' + (lnameInput ? lnameInput.value : '');
+      const email = emailInput ? emailInput.value.trim() : '';
+      const msg = msgInput ? msgInput.value : '';
+
+      // 1. Strict Syntax Regex
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a validly formatted email address.");
+        if(emailInput) emailInput.focus();
+        return;
+      }
+
+      // 2. Common typo blocks
+      const lowerEmail = email.toLowerCase();
+      if (lowerEmail.endsWith('@gmil.com') || lowerEmail.endsWith('@gamil.com') || lowerEmail.endsWith('@yaho.com') || lowerEmail.endsWith('@hotmai.com')) {
+        alert("It looks like there is a typo in your email domain. Please double check it.");
+        if(emailInput) emailInput.focus();
+        return;
+      }
+
+      const btn = document.querySelector('.cw-btn');
+      const originalText = btn ? btn.innerText : 'Send';
+      if (btn) {
+        btn.innerText = "Verifying Email...";
+        btn.style.pointerEvents = "none";
+      }
+
+      // 3. Disposable API Check (Intercepts uncreated/fake emails)
+      try {
+        const response = await fetch(`https://disposable.debounce.io/?email=${encodeURIComponent(email)}`);
+        const data = await response.json();
+        
+        if (data && data.disposable === "true") {
+          alert("Disposable, fake, or uncreated spam email addresses are not permitted. Please enter a valid real inbox email.");
+          if (btn) { btn.innerText = originalText; btn.style.pointerEvents = "auto"; }
+          return;
+        }
+      } catch (err) {
+        console.warn("Mailbox API bypassed via error, defaulting to local regex validation check.");
+      }
+
+      // Execute Desktop Client Trigger
+      if (btn) btn.innerText = "Securely Opening...";
+      
+      setTimeout(() => {
+        window.location.href = `mailto:Piyushiofficalsingh@gmail.com?subject=Inquiry from ${encodeURIComponent(name.trim())}&body=${encodeURIComponent(msg)}%0A%0AReply to: ${encodeURIComponent(email)}`;
+        if (btn) { btn.innerText = originalText; btn.style.pointerEvents = "auto"; }
+      }, 700);
     };
-    (function animCur() {
-      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-      rx += (mx - rx) * .13; ry += (my - ry) * .13;
-      curR.style.left = rx + 'px'; curR.style.top = ry + 'px';
-      requestAnimationFrame(animCur);
-    })();
+
+
+    /* ── DRAGGABLE STICKERS ── */
+    document.querySelectorAll('.peel-sticker').forEach(sticker => {
+      let isDragging = false;
+      let startX, startY, initialLeft, initialTop;
+
+      sticker.ondragstart = () => false;
+
+      sticker.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        sticker.style.cursor = 'grabbing';
+        sticker.style.zIndex = 1000;
+        
+        startX = e.clientX;
+        startY = e.clientY;
+
+        const compStyle = window.getComputedStyle(sticker);
+        initialLeft = parseInt(compStyle.left, 10) || sticker.offsetLeft;
+        initialTop = parseInt(compStyle.top, 10) || sticker.offsetTop;
+        
+        sticker.style.left = initialLeft + 'px';
+        sticker.style.top = initialTop + 'px';
+        sticker.style.right = 'auto';
+        sticker.style.bottom = 'auto';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+
+        sticker.style.left = (initialLeft + dx) + 'px';
+        sticker.style.top = (initialTop + dy) + 'px';
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          sticker.style.cursor = 'grab';
+          sticker.style.zIndex = 5;
+        }
+      });
+    });
     document.querySelectorAll('a,button,.p-card,.sk-card,.tech-chip,.tl-box').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cur-big'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cur-big'));
@@ -3637,6 +3751,64 @@
         paint();
         startAuto();
       }
+    })();
+
+    /* ── PIXEL TRAIL ── */
+    (function() {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.style.position = 'fixed';
+      canvas.style.top = '0';
+      canvas.style.left = '0';
+      canvas.style.width = '100vw';
+      canvas.style.height = '100vh';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.zIndex = '999999';
+      document.body.appendChild(canvas);
+
+      let pixels = [];
+      const colors = ['#FF6B9D', '#E8186D', '#FFB3CC'];
+
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      document.addEventListener('mousemove', (e) => {
+        for (let i = 0; i < 4; i++) {
+          pixels.push({
+            x: e.clientX,
+            y: e.clientY,
+            vx: (Math.random() - 0.5) * 4,
+            vy: (Math.random() - 0.5) * 4,
+            size: Math.random() * 5 + 2,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            life: 1.0,
+            decay: Math.random() * 0.02 + 0.015
+          });
+        }
+      });
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = pixels.length - 1; i >= 0; i--) {
+          const p = pixels[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= p.decay;
+          if (p.life <= 0) {
+            pixels.splice(i, 1);
+            continue;
+          }
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.life;
+          ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
     })();
   </script>
 </body>
